@@ -14,6 +14,7 @@
         <servlet.version>3.0.1</servlet.version>
         <junit-jupiter-engine.version>5.0.2</junit-jupiter-engine.version>
         <org.springframework-version>4.3.10.RELEASE</org.springframework-version>
+        <tomcat.version>8.0.28</tomcat.version>
     </properties>
 
     <dependencies>
@@ -22,11 +23,46 @@
             <artifactId>liquibase-core</artifactId>
             <version>3.5.0</version>
         </dependency>
+
+        <!-- Tomcat -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-juli</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper-el</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>${tomcat.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-jupiter-engine.version}</version>
         </dependency>
+        <!-- JSTL -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
@@ -46,6 +82,7 @@
             <version>${jsp.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>javax.faces</groupId>
             <artifactId>jsf-api</artifactId>
@@ -64,8 +101,14 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <version>1.7.25</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>

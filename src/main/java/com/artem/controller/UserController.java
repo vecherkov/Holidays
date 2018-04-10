@@ -9,12 +9,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 @RequestMapping("/")
 public class UserController {
 
-    private UserService userService = new UserService();
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value="/login", method = RequestMethod.GET)
+    public ModelAndView buttonHome() {
+        return new ModelAndView("login");
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String checkUser(@ModelAttribute("login") User user, ModelMap model) {
