@@ -1,8 +1,9 @@
-package com.artem;
+package com.artem.service;
 
 import com.artem.model.Holiday;
 import com.artem.service.HolidayService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -11,10 +12,12 @@ import java.util.List;
 /**
  * Created by Artem Vecher on 12.11.2017.
  */
+
+@Service
 public class CheckerWeekend {
 
     @Autowired
-    private HolidayService holidayService;
+    private HolidayService holidayService ;
 
     public int countOfWeekend(LocalDate startDate, LocalDate endDate) {
         List<Holiday> holidays = holidayService.findAll();

@@ -4,18 +4,22 @@
 <head>
 </head>
 <body>
+<form method="POST" action="${pageContext.request.contextPath}/holidays">
 <div>
     <label for="surveyStartDate">Survey Start Date:</label>
-    <input type="text" name="surveyStartDate" value="">
+    <input type="date" name="startDate" value="">
 </div>
 <div>
     <label for="surveyEndDate">Survey End Date:</label>
-    <input type="text" name="surveyEndDate" value="">
+    <input type="date" name="endDate" value="">
 </div>
 
 <div>
-    <label for="eventDate">Event Date:</label>
-    <input type="text" name="eventDate" value="">
+    <input type="submit" value= "Submit" />
+
+    <label for="eventDate">Weekdays:</label>
+    <p style="color: red;">${weekdays}</p>
 </div>
+</form>
 </body>
 </html>

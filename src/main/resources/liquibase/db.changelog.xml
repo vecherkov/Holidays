@@ -17,7 +17,7 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <createTable tableName="holidays">
+        <createTable tableName="holiday">
             <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
